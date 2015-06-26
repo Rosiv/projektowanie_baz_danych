@@ -1,8 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner"
   dslVersion="1.0.0.0"
   Id="b0e7256c-e218-467b-84fa-ace6fee41245"
   name="Cw1" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <ownedCommentsInternal>
+    <comment
+      Id="c6def3c8-9ebd-4c6c-a4c2-fb1b4d7cb36e">
+      <body>Web Application</body>
+    </comment>
+    <comment
+      Id="a9bd24e0-af0f-4947-8c28-730514abbdec">
+      <body>Payment Gateway</body>
+    </comment>
+    <comment
+      Id="73040d8f-bb84-4d10-a8a4-b269171655db">
+      <body>Backoffice</body>
+    </comment>
+  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -17,28 +31,337 @@
         name="StandardProfileL3" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <activity
+        Id="7814549f-a089-4bdc-a999-1feda21ed6cd"
+        name="rental_order_via_website"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <opaqueAction
+            Id="0b8b4273-8bd7-4bef-bb87-0f22b87633d5"
+            name="User goes to main page"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="eda6e7f4-4e8b-457c-9860-9de88b4be5a5"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c0ff32ad-633d-4efe-8eb5-d866621017c2"
+                  LastKnownName="User sees detailed information about available cars"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <initialNode
+            Id="85755764-84c0-4174-8998-93431b2801ac"
+            name="Initial1"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="686f0afd-2dd6-43f5-8f69-b3d30ae018c0"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="0b8b4273-8bd7-4bef-bb87-0f22b87633d5"
+                  LastKnownName="User goes to main page"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </initialNode>
+          <opaqueAction
+            Id="c0ff32ad-633d-4efe-8eb5-d866621017c2"
+            name="User sees detailed information about available cars"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="df72e497-3202-471b-a09f-d33dbb55eb5f"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="623bd86b-6c86-4623-b993-da674b06abb2"
+                  LastKnownName="User decides to rent a particular car"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="623bd86b-6c86-4623-b993-da674b06abb2"
+            name="User decides to rent a particular car"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="aad9cafd-1b12-44c0-b604-a7d3029d7573"
+                isLeaf="false">
+                <decisionNodeMoniker
+                  Id="012152b0-d970-44d1-aa1f-96e9cfa0d8a4"
+                  LastKnownName="Decision1"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="6f65c832-5b34-4ea0-8dba-cb8747ed6b3e"
+            name="Direct payment"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c9609e5d-1e8c-4ae6-a997-f60436874544"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="222d86ef-61ff-47b7-9c65-5f64245cc98e"
+                  LastKnownName="Display confirmation"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="956fcc0d-e024-42d8-8147-b7abf9014a4f"
+            name="Online payment"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b31bbaa8-4689-42aa-a7fa-2ea1ac031827"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a1be3d03-bd89-4e57-8ced-fd600951be41"
+                  LastKnownName="Redirect to payment page"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode
+            Id="012152b0-d970-44d1-aa1f-96e9cfa0d8a4"
+            name="Decision1"
+            isLeaf="false">
+            <description>Payment</description>
+            <flowNodeTargets>
+              <controlFlow
+                Id="1c749159-5816-4059-96c7-b7a98ae6cb80"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="6f65c832-5b34-4ea0-8dba-cb8747ed6b3e"
+                  LastKnownName="Direct payment"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5f7ca4d7-9620-479e-b4f7-d682a066ac4a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="956fcc0d-e024-42d8-8147-b7abf9014a4f"
+                  LastKnownName="Online payment"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction
+            Id="a1be3d03-bd89-4e57-8ced-fd600951be41"
+            name="Redirect to payment page"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="21f463a5-1cfa-470a-906e-862fa71c596a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a1880f65-13a5-421f-964c-713dee06d349"
+                  LastKnownName="Users fills payment form"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a1880f65-13a5-421f-964c-713dee06d349"
+            name="Users fills payment form"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="2b832cb3-55c4-478e-8476-49e9eeabaa94"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="a64d5e52-5a38-401a-a1be-32cca852a79d"
+                  LastKnownName="Perform authorize transaction"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a64d5e52-5a38-401a-a1be-32cca852a79d"
+            name="Perform authorize transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d1898147-ef27-4bd8-ae0c-f74e5d11c6c4"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="b6c1f1bc-ffc7-407f-a4de-1a78dc61b456"
+                  LastKnownName="Perform capture transaction"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="b6c1f1bc-ffc7-407f-a4de-1a78dc61b456"
+            name="Perform capture transaction"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="15d1a363-65cb-4862-bbf4-eaf8a7366c30"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="a1802cf9-eb42-4aff-8c0e-38133ee1ef55"
+                  LastKnownName="Payment notification"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="7e5b7a93-e84a-4992-bffd-e836f0d41ebf"
+                isLeaf="false">
+                <sendSignalActionMoniker
+                  Id="825feed6-b715-43cf-8a3a-907569197dbb"
+                  LastKnownName="Order notification"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <sendSignalAction
+            Id="a1802cf9-eb42-4aff-8c0e-38133ee1ef55"
+            name="Payment notification"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="549334cf-22f4-4dba-8cc0-e36354186588"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="1d37d9ea-fbc4-4bc1-a151-3ae3e42604f0"
+                  LastKnownName="Book payment"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction
+            Id="1d37d9ea-fbc4-4bc1-a151-3ae3e42604f0"
+            name="Book payment"
+            isLeaf="false"
+            isUnmarshall="false" />
+          <opaqueAction
+            Id="ed2d1287-76f9-49da-b144-da9da72095e9"
+            name="Display invoice"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="48668dc9-7401-4c7b-a506-6383619b4807"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="85330f5b-8b29-4f9c-896b-51cc51ba23ee"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="85330f5b-8b29-4f9c-896b-51cc51ba23ee"
+            name="ActivityFinal1"
+            isLeaf="false" />
+          <sendSignalAction
+            Id="825feed6-b715-43cf-8a3a-907569197dbb"
+            name="Order notification"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="16f15eef-cd7f-4e27-8aa5-3356e8210378"
+                isLeaf="false">
+                <acceptEventActionMoniker
+                  Id="15b8ad33-f067-46b0-a055-b8ed0dff9ae6"
+                  LastKnownName="Book rental"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <acceptEventAction
+            Id="15b8ad33-f067-46b0-a055-b8ed0dff9ae6"
+            name="Book rental"
+            isLeaf="false"
+            isUnmarshall="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="ddc02743-ac00-412e-abfe-78d5c6c387f1"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="9741b580-021d-46ae-8351-b29f25881447"
+                  LastKnownName="Confirm payment"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </acceptEventAction>
+          <opaqueAction
+            Id="c5ed9611-e214-4073-9216-9e59828dc904"
+            name="Generate invoice"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="7d0261db-8020-4ec3-8603-b0d147cb89ed"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="ed2d1287-76f9-49da-b144-da9da72095e9"
+                  LastKnownName="Display invoice"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="9741b580-021d-46ae-8351-b29f25881447"
+            name="Confirm payment"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0e76d286-aeed-435e-8ee9-37bc9369a670"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="c5ed9611-e214-4073-9216-9e59828dc904"
+                  LastKnownName="Generate invoice"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="222d86ef-61ff-47b7-9c65-5f64245cc98e"
+            name="Display confirmation"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="b64a7c5b-6c56-4825-bc25-b2a1424c02e5"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="85330f5b-8b29-4f9c-896b-51cc51ba23ee"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
+  </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
     name="Integer"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
     name="Boolean"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
     name="String"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
   <primitiveType
     Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
     name="UnlimitedNatural"
     isAbstract="false"
-    isTemplate="false"
     isLeaf="false" />
 </modelStoreModel>
