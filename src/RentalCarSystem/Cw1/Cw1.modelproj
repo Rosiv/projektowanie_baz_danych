@@ -29,6 +29,13 @@
       <SubType>Content</SubType>
       <DependentUpon>rental_order_via_website.activitydiagram</DependentUpon>
     </Content>
+    <Content Include="basic_wfd.activitydiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="basic_wfd.activitydiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>basic_wfd.activitydiagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\Cw1.uml">
       <SubType>Content</SubType>

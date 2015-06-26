@@ -343,6 +343,334 @@
         </nodes>
       </activity>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <activity
+        Id="65ab396f-c833-46d3-b89f-c76554c2cec2"
+        name="rental_order_wfd"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false"
+        isReentrant="false"
+        isReadOnly="false"
+        isSingleExecution="false">
+        <nodes>
+          <objectNode
+            Id="46a3d44d-bd45-47c7-8af4-df007a84727f"
+            name="Client"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="0d4c09b4-4b7b-491f-9ccf-fe1c7d7cf866"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="028190e1-0201-4565-9fa8-466b54775b80"
+                  LastKnownName="Phone order"
+                  LastKnownLocation="Cw1.uml" />
+              </objectFlow>
+              <objectFlow
+                Id="3acc34f0-b724-460b-9328-03fd50e7f5bc"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="3b8caf8f-e53e-4367-9ce4-556ac9a15c68"
+                  LastKnownName="Online order"
+                  LastKnownLocation="Cw1.uml" />
+              </objectFlow>
+              <objectFlow
+                Id="afb479e0-ff73-4bc6-8c07-5075e9ce722d"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="a405cdc6-ffaf-4a50-9c32-69e72ca773e3"
+                  LastKnownName="Store order"
+                  LastKnownLocation="Cw1.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="44d4cc09-d7db-4248-b55a-24ae551987f8"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="028190e1-0201-4565-9fa8-466b54775b80"
+            name="Phone order"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1aaa63c7-3054-42e3-9a59-6ae2209795a4"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="b66f7135-be57-4f53-bf71-15beea6590ce"
+                  LastKnownName="Join1"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="3b8caf8f-e53e-4367-9ce4-556ac9a15c68"
+            name="Online order"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="eebef237-efdc-4f8c-9255-ce5277ecf41c"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="b66f7135-be57-4f53-bf71-15beea6590ce"
+                  LastKnownName="Join1"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="a405cdc6-ffaf-4a50-9c32-69e72ca773e3"
+            name="Store order"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="377bcd9f-ef7f-490c-ad33-d1a2b9592b08"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="b66f7135-be57-4f53-bf71-15beea6590ce"
+                  LastKnownName="Join1"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="94d9f65a-84c0-4a85-9987-908be8697e8d"
+            name="Payment"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="c82855e9-c070-4b17-9cfc-543b67228d8a"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="47b3d36d-7adb-4429-9b0c-b0c4aacd17e8"
+                  LastKnownName="Car issue"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode
+            Id="b66f7135-be57-4f53-bf71-15beea6590ce"
+            name="Join1"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="559661a4-494b-4fcf-817b-768040e8cafe"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="15b5fdfe-467d-40e7-85cd-1f58152b6c90"
+                  LastKnownName="Store"
+                  LastKnownLocation="Cw1.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </joinNode>
+          <opaqueAction
+            Id="47b3d36d-7adb-4429-9b0c-b0c4aacd17e8"
+            name="Car issue"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d2d9bb82-1ad4-486b-8c5a-a7d09ba0e6f7"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="5cdfd02c-cc03-423e-9a3e-a180733ce5c5"
+                  LastKnownName="Car return"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="5cdfd02c-cc03-423e-9a3e-a180733ce5c5"
+            name="Car return"
+            isLeaf="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="8144ed59-6f6c-4b6c-8191-00fe5dce62af"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <objectNodeMoniker
+                  Id="e361ad5d-61d6-4a4d-b9f3-c891818298f7"
+                  LastKnownName="Maintenance service"
+                  LastKnownLocation="Cw1.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <objectNode
+            Id="e361ad5d-61d6-4a4d-b9f3-c891818298f7"
+            name="Maintenance service"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="cd2e935e-4ec7-40d5-afd7-87c7e64e4680"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="3cc3a40d-c0f3-4a18-bb5f-188c44e55966"
+                  LastKnownName="Car health check"
+                  LastKnownLocation="Cw1.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="f5fd3580-e4c4-40e5-8c36-faa027dd9be1"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <opaqueAction
+            Id="3cc3a40d-c0f3-4a18-bb5f-188c44e55966"
+            name="Car health check"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="fc8ae430-cd28-444b-884a-1038ba928fc3"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="d6699f63-1326-4295-9be2-830e76614771"
+                  LastKnownName="Repair"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="4e0dd327-f052-4c56-ac6a-3e922d20183b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="93b4228f-2c1a-4e87-934a-e18c05d8665e"
+                  LastKnownName="Cleanup"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+              <controlFlow
+                Id="5ab75491-432e-4432-a1b4-9f3c587d82d2"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="83024f9b-2d22-4ea1-aae6-bbda971d82f2"
+                  LastKnownName="Supplies refill"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="d6699f63-1326-4295-9be2-830e76614771"
+            name="Repair"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="d1fce4ef-b790-4de6-bca6-bc9c57a2c4b6"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="4562f8e1-d114-4439-880f-2e213a40dd5c"
+                  LastKnownName="Join2"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="93b4228f-2c1a-4e87-934a-e18c05d8665e"
+            name="Cleanup"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="50abddc9-7424-4382-a30a-30b6435b38fd"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="4562f8e1-d114-4439-880f-2e213a40dd5c"
+                  LastKnownName="Join2"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction
+            Id="83024f9b-2d22-4ea1-aae6-bbda971d82f2"
+            name="Supplies refill"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="66b2ecdc-3666-4d38-910c-f4466957d2c3"
+                isLeaf="false">
+                <joinNodeMoniker
+                  Id="4562f8e1-d114-4439-880f-2e213a40dd5c"
+                  LastKnownName="Join2"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode
+            Id="15b5fdfe-467d-40e7-85cd-1f58152b6c90"
+            name="Store"
+            isLeaf="false"
+            ordering="Unordered"
+            isControlType="false">
+            <objectFlowTargets>
+              <objectFlow
+                Id="1d63533a-97b2-4e55-83bc-70bf185bf196"
+                isLeaf="false"
+                isMulticast="false"
+                isMultireceive="false">
+                <opaqueActionMoniker
+                  Id="94d9f65a-84c0-4a85-9987-908be8697e8d"
+                  LastKnownName="Payment"
+                  LastKnownLocation="Cw1.uml" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger
+                Id="1e14a862-7e57-448a-a7c5-7df184f8bfd8"
+                name="2147483647"
+                value="2147483647" />
+            </upperBound>
+          </objectNode>
+          <joinNode
+            Id="4562f8e1-d114-4439-880f-2e213a40dd5c"
+            name="Join2"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="1934baf5-c29f-47e4-b2e0-a2214de6f87b"
+                isLeaf="false">
+                <opaqueActionMoniker
+                  Id="05d0ad25-27fd-4439-bf57-ce2976b21578"
+                  LastKnownName="Return to store"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction
+            Id="05d0ad25-27fd-4439-bf57-ce2976b21578"
+            name="Return to store"
+            isLeaf="false">
+            <flowNodeTargets>
+              <controlFlow
+                Id="0a47b259-c112-443a-972a-e0b6c05951b4"
+                isLeaf="false">
+                <activityFinalNodeMoniker
+                  Id="ef69c50c-5516-483d-b610-99aff08e925f"
+                  LastKnownName="ActivityFinal1"
+                  LastKnownLocation="Cw1.uml" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode
+            Id="ef69c50c-5516-483d-b610-99aff08e925f"
+            name="ActivityFinal1"
+            isLeaf="false" />
+        </nodes>
+      </activity>
+    </packageHasNamedElement>
   </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"

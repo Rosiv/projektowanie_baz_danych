@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="16924d7c-befc-480b-927f-b36bef9314d3" name="rental_order_wfd" linkedPackageId="bd006bab-f2b4-4660-834e-443ae8c76c5e" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="5f5b2bc0-0db6-49af-97f9-7e2975888786">
+      <profileInstance Id="754fc010-3ddf-456f-9dde-7ddb27edd49e" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="e0f42b51-13ca-4e53-8d5d-430476ac607b">
+      <profileInstance Id="9ebfb2c0-627d-4d47-945b-d2b0fb744c60" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="584ffa82-efff-4ac3-b340-fab53c8d92af" name="rental_order_wfd" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="65ab396f-c833-46d3-b89f-c76554c2cec2" />
+        <nodes>
+          <objectNode Id="e42bb9da-766d-437d-908d-cd236e765590" name="Client" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="46a3d44d-bd45-47c7-8af4-df007a84727f" />
+            <objectFlowTargets>
+              <objectFlow Id="5d5f71ab-db4b-4173-9b84-354dac8d00d7" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="58a42738-4cd1-4ee2-9362-170556498c0a" LastKnownName="Phone order" />
+                <elementDefinition Id="0d4c09b4-4b7b-491f-9ccf-fe1c7d7cf866" />
+              </objectFlow>
+              <objectFlow Id="1f0336fb-e209-4d6c-ba56-e5407df50aa7" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="78cdf937-3d55-45b1-9039-237668c57473" LastKnownName="Online order" />
+                <elementDefinition Id="3acc34f0-b724-460b-9328-03fd50e7f5bc" />
+              </objectFlow>
+              <objectFlow Id="70492ceb-b3a6-45c7-8de8-94964d188fe1" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="240ee9fd-3b23-46b8-9850-b8aeb3ccd44a" LastKnownName="Store order" />
+                <elementDefinition Id="afb479e0-ff73-4bc6-8c07-5075e9ce722d" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="421610fb-4e00-4127-9f5f-762ee8f8c9c5" name="2147483647" value="2147483647">
+                <elementDefinition Id="44d4cc09-d7db-4248-b55a-24ae551987f8" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="58a42738-4cd1-4ee2-9362-170556498c0a" name="Phone order" isLeaf="false">
+            <elementDefinition Id="028190e1-0201-4565-9fa8-466b54775b80" />
+            <flowNodeTargets>
+              <controlFlow Id="5a43a200-ac23-448d-a2d3-c0612bf7cd7a" isLeaf="false">
+                <joinNodeMoniker Id="5006e13b-2517-4171-9ac0-b2e99c9bba67" LastKnownName="Join1" />
+                <elementDefinition Id="1aaa63c7-3054-42e3-9a59-6ae2209795a4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="78cdf937-3d55-45b1-9039-237668c57473" name="Online order" isLeaf="false">
+            <elementDefinition Id="3b8caf8f-e53e-4367-9ce4-556ac9a15c68" />
+            <flowNodeTargets>
+              <controlFlow Id="f4503a4d-38d6-48db-8a45-1697654d6e2c" isLeaf="false">
+                <joinNodeMoniker Id="5006e13b-2517-4171-9ac0-b2e99c9bba67" LastKnownName="Join1" />
+                <elementDefinition Id="eebef237-efdc-4f8c-9255-ce5277ecf41c" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="240ee9fd-3b23-46b8-9850-b8aeb3ccd44a" name="Store order" isLeaf="false">
+            <elementDefinition Id="a405cdc6-ffaf-4a50-9c32-69e72ca773e3" />
+            <flowNodeTargets>
+              <controlFlow Id="a418c349-3e14-452a-a9d1-c7e9caab9564" isLeaf="false">
+                <joinNodeMoniker Id="5006e13b-2517-4171-9ac0-b2e99c9bba67" LastKnownName="Join1" />
+                <elementDefinition Id="377bcd9f-ef7f-490c-ad33-d1a2b9592b08" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="d2438451-ecac-472e-aa2a-671c48712745" name="Payment" isLeaf="false">
+            <elementDefinition Id="94d9f65a-84c0-4a85-9987-908be8697e8d" />
+            <flowNodeTargets>
+              <controlFlow Id="fcfa6450-0e3e-44fb-ae82-0b90b67a0338" isLeaf="false">
+                <opaqueActionMoniker Id="b2be46a3-3536-4dbf-93e6-19c5e37cd007" LastKnownName="Car issue" />
+                <elementDefinition Id="c82855e9-c070-4b17-9cfc-543b67228d8a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <joinNode Id="5006e13b-2517-4171-9ac0-b2e99c9bba67" name="Join1" isLeaf="false">
+            <elementDefinition Id="b66f7135-be57-4f53-bf71-15beea6590ce" />
+            <objectFlowTargets>
+              <objectFlow Id="d5489ed2-8fc2-48bf-bf24-fc79164af671" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="7af48aa3-d675-4a2c-93a5-a8ca96befb8c" LastKnownName="Store" />
+                <elementDefinition Id="559661a4-494b-4fcf-817b-768040e8cafe" />
+              </objectFlow>
+            </objectFlowTargets>
+          </joinNode>
+          <opaqueAction Id="b2be46a3-3536-4dbf-93e6-19c5e37cd007" name="Car issue" isLeaf="false">
+            <elementDefinition Id="47b3d36d-7adb-4429-9b0c-b0c4aacd17e8" />
+            <flowNodeTargets>
+              <controlFlow Id="137f4b1f-5315-4ee5-bdb9-a253a87d9f07" isLeaf="false">
+                <opaqueActionMoniker Id="3ae5d7c2-4136-4b36-a8e0-8e840b379cdf" LastKnownName="Car return" />
+                <elementDefinition Id="d2d9bb82-1ad4-486b-8c5a-a7d09ba0e6f7" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3ae5d7c2-4136-4b36-a8e0-8e840b379cdf" name="Car return" isLeaf="false">
+            <elementDefinition Id="5cdfd02c-cc03-423e-9a3e-a180733ce5c5" />
+            <objectFlowTargets>
+              <objectFlow Id="1ccde32a-e615-47f8-ac89-097a7561c2a0" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <objectNodeMoniker Id="f4a6e10f-6661-4b8e-bc58-a57ea29ec08a" LastKnownName="Maintenance service" />
+                <elementDefinition Id="8144ed59-6f6c-4b6c-8191-00fe5dce62af" />
+              </objectFlow>
+            </objectFlowTargets>
+          </opaqueAction>
+          <objectNode Id="f4a6e10f-6661-4b8e-bc58-a57ea29ec08a" name="Maintenance service" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="e361ad5d-61d6-4a4d-b9f3-c891818298f7" />
+            <objectFlowTargets>
+              <objectFlow Id="05554fdb-7731-4ff0-ad79-0297f431bbe6" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="99aa65fd-7791-4843-aee7-0a44576bf7c6" LastKnownName="Car health check" />
+                <elementDefinition Id="cd2e935e-4ec7-40d5-afd7-87c7e64e4680" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="d874c60a-e71d-4362-93b4-6a68870f9cdf" name="2147483647" value="2147483647">
+                <elementDefinition Id="f5fd3580-e4c4-40e5-8c36-faa027dd9be1" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <opaqueAction Id="99aa65fd-7791-4843-aee7-0a44576bf7c6" name="Car health check" isLeaf="false">
+            <elementDefinition Id="3cc3a40d-c0f3-4a18-bb5f-188c44e55966" />
+            <flowNodeTargets>
+              <controlFlow Id="e701dc8c-3133-464c-99b7-3a1cb5d98e89" isLeaf="false">
+                <opaqueActionMoniker Id="f5672fe4-014d-424a-9121-3d1fc4c0c656" LastKnownName="Repair" />
+                <elementDefinition Id="fc8ae430-cd28-444b-884a-1038ba928fc3" />
+              </controlFlow>
+              <controlFlow Id="b7f76292-6296-4eeb-b72a-d245ebc5126a" isLeaf="false">
+                <opaqueActionMoniker Id="3e757299-7c50-47db-8f73-2cb46c41b2c7" LastKnownName="Cleanup" />
+                <elementDefinition Id="4e0dd327-f052-4c56-ac6a-3e922d20183b" />
+              </controlFlow>
+              <controlFlow Id="74b235c9-c48e-4137-94d5-f4b897549d55" isLeaf="false">
+                <opaqueActionMoniker Id="34e0ca82-7f11-44e6-96db-99e2574e3eb4" LastKnownName="Supplies refill" />
+                <elementDefinition Id="5ab75491-432e-4432-a1b4-9f3c587d82d2" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f5672fe4-014d-424a-9121-3d1fc4c0c656" name="Repair" isLeaf="false">
+            <elementDefinition Id="d6699f63-1326-4295-9be2-830e76614771" />
+            <flowNodeTargets>
+              <controlFlow Id="5a2a5713-2625-4cf7-9ae1-09cd7b5e9574" isLeaf="false">
+                <joinNodeMoniker Id="32d41085-e991-4e9d-a098-91bdf09db0d9" LastKnownName="Join2" />
+                <elementDefinition Id="d1fce4ef-b790-4de6-bca6-bc9c57a2c4b6" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="3e757299-7c50-47db-8f73-2cb46c41b2c7" name="Cleanup" isLeaf="false">
+            <elementDefinition Id="93b4228f-2c1a-4e87-934a-e18c05d8665e" />
+            <flowNodeTargets>
+              <controlFlow Id="7ab30801-285f-4a94-8459-58303cd8a59d" isLeaf="false">
+                <joinNodeMoniker Id="32d41085-e991-4e9d-a098-91bdf09db0d9" LastKnownName="Join2" />
+                <elementDefinition Id="50abddc9-7424-4382-a30a-30b6435b38fd" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="34e0ca82-7f11-44e6-96db-99e2574e3eb4" name="Supplies refill" isLeaf="false">
+            <elementDefinition Id="83024f9b-2d22-4ea1-aae6-bbda971d82f2" />
+            <flowNodeTargets>
+              <controlFlow Id="1dc94302-86f0-4d6e-8b33-dd273544d250" isLeaf="false">
+                <joinNodeMoniker Id="32d41085-e991-4e9d-a098-91bdf09db0d9" LastKnownName="Join2" />
+                <elementDefinition Id="66b2ecdc-3666-4d38-910c-f4466957d2c3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <objectNode Id="7af48aa3-d675-4a2c-93a5-a8ca96befb8c" name="Store" isLeaf="false" ordering="Unordered" isControlType="false">
+            <elementDefinition Id="15b5fdfe-467d-40e7-85cd-1f58152b6c90" />
+            <objectFlowTargets>
+              <objectFlow Id="a4613456-fd91-4658-91aa-5acdd4dcad32" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <opaqueActionMoniker Id="d2438451-ecac-472e-aa2a-671c48712745" LastKnownName="Payment" />
+                <elementDefinition Id="1d63533a-97b2-4e55-83bc-70bf185bf196" />
+              </objectFlow>
+            </objectFlowTargets>
+            <upperBound>
+              <literalInteger Id="5bdf824e-dea7-4a28-880f-319ecf8d558f" name="2147483647" value="2147483647">
+                <elementDefinition Id="1e14a862-7e57-448a-a7c5-7df184f8bfd8" />
+              </literalInteger>
+            </upperBound>
+          </objectNode>
+          <joinNode Id="32d41085-e991-4e9d-a098-91bdf09db0d9" name="Join2" isLeaf="false">
+            <elementDefinition Id="4562f8e1-d114-4439-880f-2e213a40dd5c" />
+            <flowNodeTargets>
+              <controlFlow Id="28c36d41-8774-4dac-be6c-9616b01ea056" isLeaf="false">
+                <opaqueActionMoniker Id="ce5c8450-bde4-4ead-b89e-945a6c900813" LastKnownName="Return to store" />
+                <elementDefinition Id="1934baf5-c29f-47e4-b2e0-a2214de6f87b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+          <opaqueAction Id="ce5c8450-bde4-4ead-b89e-945a6c900813" name="Return to store" isLeaf="false">
+            <elementDefinition Id="05d0ad25-27fd-4439-bf57-ce2976b21578" />
+            <flowNodeTargets>
+              <controlFlow Id="eb2f8566-b0bf-41eb-a4e2-d0ec93c75b58" isLeaf="false">
+                <activityFinalNodeMoniker Id="9c42f482-40f7-4099-bfab-d7ae11052d0c" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="0a47b259-c112-443a-972a-e0b6c05951b4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <activityFinalNode Id="9c42f482-40f7-4099-bfab-d7ae11052d0c" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="ef69c50c-5516-483d-b610-99aff08e925f" />
+          </activityFinalNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="bd006bab-f2b4-4660-834e-443ae8c76c5e" name="Cw1">
+    <elementDefinition Id="b0e7256c-e218-467b-84fa-ace6fee41245" />
+  </package>
+</activityRootModel>
