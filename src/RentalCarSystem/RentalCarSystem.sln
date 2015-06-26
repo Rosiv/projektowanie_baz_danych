@@ -5,6 +5,20 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Cw1", "Cw1\Cw1.modelproj", "{72DBFB12-3A4F-4617-9B7F-8FA587ED27EE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{A3F9AB9C-FA81-4E81-95CC-68F8DDF67217}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\Paweł\Downloads\PBD_C1.pdf = C:\Users\Paweł\Downloads\PBD_C1.pdf
+		C:\Users\Paweł\Downloads\PBD_C2.pdf = C:\Users\Paweł\Downloads\PBD_C2.pdf
+		C:\Users\Paweł\Downloads\PBD_C3.pdf = C:\Users\Paweł\Downloads\PBD_C3.pdf
+		C:\Users\Paweł\Downloads\PBD_C4.pdf = C:\Users\Paweł\Downloads\PBD_C4.pdf
+		C:\Users\Paweł\Downloads\PBD_C4_Przyklady.sql = C:\Users\Paweł\Downloads\PBD_C4_Przyklady.sql
+		C:\Users\Paweł\Downloads\PBD_C4_Slowniki.zip = C:\Users\Paweł\Downloads\PBD_C4_Slowniki.zip
+		C:\Users\Paweł\Downloads\PBD_C5.pdf = C:\Users\Paweł\Downloads\PBD_C5.pdf
+		C:\Users\Paweł\Downloads\PBD_C6.pdf = C:\Users\Paweł\Downloads\PBD_C6.pdf
+		C:\Users\Paweł\Downloads\PBD_P1.pdf = C:\Users\Paweł\Downloads\PBD_P1.pdf
+		C:\Users\Paweł\Downloads\PBD_P2.pdf = C:\Users\Paweł\Downloads\PBD_P2.pdf
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
