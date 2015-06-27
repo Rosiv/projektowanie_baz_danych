@@ -27,27 +27,35 @@ CREATE TABLE dbo.Klient (
 	,Email VARCHAR(50) NULL
 	,Telefon VARCHAR(30) NULL
 	,DataRejestracji DATETIME NOT NULL
-	) 
+	)
 
 -- Seed dictionaries
-CREATE TABLE Imiona(
-    Imie varchar(20),
-	Plec varchar(1));
+CREATE TABLE Imiona (
+	Imie VARCHAR(20)
+	,Plec VARCHAR(1)
+	);
 
-BULK INSERT Imiona FROM 'F:\Imiona.txt'
-WITH (FIELDTERMINATOR =';',ROWTERMINATOR ='\n')
+BULK INSERT Imiona
+FROM 'F:\Imiona.txt' WITH (
+		FIELDTERMINATOR = ';'
+		,ROWTERMINATOR = '\n'
+		)
 
-CREATE TABLE Nazwiska(
-    Nazwisko varchar(30));
+CREATE TABLE Nazwiska (Nazwisko VARCHAR(30));
 
-BULK INSERT Nazwiska FROM 'F:\Nazwiska.txt'
-WITH (FIELDTERMINATOR =';',ROWTERMINATOR ='\n')
+BULK INSERT Nazwiska
+FROM 'F:\Nazwiska.txt' WITH (
+		FIELDTERMINATOR = ';'
+		,ROWTERMINATOR = '\n'
+		)
 
-CREATE TABLE Miejscowosci(
-    Miejscowosc varchar(40));
+CREATE TABLE Miejscowosci (Miejscowosc VARCHAR(40));
 
-BULK INSERT Miejscowosci FROM 'F:\Miejscowosci.txt'
-WITH (FIELDTERMINATOR =';',ROWTERMINATOR ='\n')
+BULK INSERT Miejscowosci
+FROM 'F:\Miejscowosci.txt' WITH (
+		FIELDTERMINATOR = ';'
+		,ROWTERMINATOR = '\n'
+		)
 
 ---------------------------------------------------------------------
 DECLARE @Imie VARCHAR(20);
@@ -70,71 +78,95 @@ DECLARE @KodPocztowy VARCHAR(7);
 DECLARE @KodPocztowy_MIN INT;
 DECLARE @KodPocztowy_MAX INT;
 DECLARE @Email VARCHAR(50)
-DECLARE @Telefon  VARCHAR(30);
+DECLARE @Telefon VARCHAR(30);
 DECLARE @Telefon_MAX BIGINT;
 DECLARE @Telefon_MIN BIGINT;
 DECLARE @DataRejestracji DATE
-
 DECLARE @Counter INT
+
 SET @Counter = 0;
 
-WHILE(@Counter < 5000) BEGIN
+WHILE (@Counter < 5000)
+BEGIN
+	SET @Imie = (
+			SELECT TOP 1 Imie
+			FROM Imiona
+			ORDER BY NEWID()
+			)
+	SET @Nazwisko = (
+			SELECT TOP 1 Nazwisko
+			FROM Nazwiska
+			ORDER BY NEWID()
+			)
+	SET @Miejscowosc = (
+			SELECT TOP 1 Miejscowosc
+			FROM Miejscowosci
+			ORDER BY NEWID()
+			)
+	SET @Pesel_MIN = 10000000000
+	SET @Pesel_MAX = 99999999999
 
-		SET @Imie = (SELECT TOP 1 Imie FROM Imiona
-		ORDER BY NEWID())
+	SELECT @Pesel = ROUND(((@Pesel_MAX - @Pesel_MIN - 1) * RAND() + @Pesel_MIN), 0)
 
-		SET @Nazwisko = (SELECT TOP 1 Nazwisko FROM Nazwiska
-		ORDER BY NEWID())
+	SET @Nip_MIN = 1000000000000
+	SET @Nip_MAX = 9999999999999
 
-		SET @Miejscowosc = (SELECT TOP 1 Miejscowosc FROM Miejscowosci
-		ORDER BY NEWID())
+	SELECT @Nip = (ROUND(((@Nip_MAX - @Nip_MIN - 1) * RAND() + @Nip_MIN), 0))
 
-		SET @Pesel_MIN = 10000000000 
-		SET @Pesel_MAX = 99999999999 
-		SELECT @Pesel = ROUND(((@Pesel_MAX - @Pesel_MIN -1) * RAND() + @Pesel_MIN), 0)
+	SET @Ulica = @Miejscowosc + 'SKA'
+	SET @NrDomu_MIN = 1
+	SET @NrDomu_MAX = 300
 
-		SET @Nip_MIN = 1000000000000 
-		SET @Nip_MAX = 9999999999999 
-		SELECT @Nip = (ROUND(((@Nip_MAX - @Nip_MIN -1) * RAND() + @Nip_MIN), 0) )
+	SELECT @NrDomu = CAST(ROUND(((@NrDomu_MAX - @NrDomu_MIN - 1) * RAND() + @NrDomu_MIN), 0) AS VARCHAR(10))
 
-		SET @Ulica = @Miejscowosc+'SKA'
+	SET @NrLokalu_MIN = 1
+	SET @NrLokalu_MAX = 40
 
-		SET @NrDomu_MIN = 1 
-		SET @NrDomu_MAX = 300 
-		SELECT  @NrDomu = CAST(ROUND(((@NrDomu_MAX - @NrDomu_MIN -1) * RAND() + @NrDomu_MIN), 0) AS VARCHAR(10))
-		
-		SET @NrLokalu_MIN = 1 
-		SET @NrLokalu_MAX = 40 
-		SELECT  @NrLokalu = CAST(ROUND(((@NrLokalu_MAX - @NrLokalu_MIN -1) * RAND() + @NrLokalu_MIN), 0) AS VARCHAR(10))
+	SELECT @NrLokalu = CAST(ROUND(((@NrLokalu_MAX - @NrLokalu_MIN - 1) * RAND() + @NrLokalu_MIN), 0) AS VARCHAR(10))
 
-		SET @KodPocztowy_MIN = 100000 
-		SET @KodPocztowy_MAX = 999999 
-		SELECT  @KodPocztowy = CAST(ROUND(((@KodPocztowy_MAX - @KodPocztowy_MIN -1) * RAND() + @KodPocztowy_MIN), 0) AS VARCHAR(10))
-		SELECT  @KodPocztowy = (SELECT STUFF(@KodPocztowy, 3,1,'-'))
+	SET @KodPocztowy_MIN = 100000
+	SET @KodPocztowy_MAX = 999999
 
-		SET @Email = @Imie + '.' + @Nazwisko + '@gmail.com'
+	SELECT @KodPocztowy = CAST(ROUND(((@KodPocztowy_MAX - @KodPocztowy_MIN - 1) * RAND() + @KodPocztowy_MIN), 0) AS VARCHAR(10))
 
-		SET @Telefon_MIN = 100000000 
-		SET @Telefon_MAX = 999999999 
-		SELECT @Telefon = STR(ROUND(((@Telefon_MAX - @Telefon_MIN -1) * RAND() + @Telefon_MIN), 0))
+	SELECT @KodPocztowy = (
+			SELECT STUFF(@KodPocztowy, 3, 1, '-')
+			)
 
-		SET @DataRejestracji = DATEADD(d, RAND(), GETDATE())
+	SET @Email = @Imie + '.' + @Nazwisko + '@gmail.com'
+	SET @Telefon_MIN = 100000000
+	SET @Telefon_MAX = 999999999
 
-		INSERT INTO dbo.Klient VALUES(
-		@Imie,
-		@Nazwisko,
-		@Pesel,
-		@Nip,
-		@Ulica,
-		@NrDomu,
-		@NrLokalu,
-		@KodPocztowy,
-		@Miejscowosc,
-		@Miejscowosc,
-		@Email,
-		@Telefon,
-		@DataRejestracji
-		)
+	SELECT @Telefon = STR(ROUND(((@Telefon_MAX - @Telefon_MIN - 1) * RAND() + @Telefon_MIN), 0))
+
+	SET @DataRejestracji = DATEADD(d, RAND(), GETDATE())
+
+	IF (
+			NOT EXISTS (
+				SELECT *
+				FROM dbo.Klient
+				WHERE PESEL = @Pesel
+					OR NIP = @Nip
+				)
+			)
+	BEGIN
+		INSERT INTO dbo.Klient
+		VALUES (
+			@Imie
+			,@Nazwisko
+			,@Pesel
+			,@Nip
+			,@Ulica
+			,@NrDomu
+			,@NrLokalu
+			,@KodPocztowy
+			,@Miejscowosc
+			,@Miejscowosc
+			,@Email
+			,@Telefon
+			,@DataRejestracji
+			)
 
 		SET @Counter = @Counter + 1;
+	END
 END
