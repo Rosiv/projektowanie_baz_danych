@@ -135,4 +135,6 @@ WHILE(@Counter < 5000) BEGIN
 		@Telefon,
 		@DataRejestracji
 		)
+
+		SET @Counter = @Counter + 1;
 END
