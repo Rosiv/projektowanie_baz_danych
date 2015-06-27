@@ -60,13 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="InitialScript.sql" />
+    <None Include="Generator.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Generator_StoredProc.cs" />
   </ItemGroup>
 </Project>
